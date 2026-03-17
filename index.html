@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espoir de la Rue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+    body {background:#F5F5F5; color:#212121;}
+
+    /* NAVBAR */
+    nav{display:flex; justify-content:space-between; align-items:center; padding:18px 8%; background:#333; color:white; position:fixed; width:100%; z-index:1000; transition:0.3s;}
+    nav.scrolled{background:#212121;}
+    nav ul{display:flex; list-style:none;}
+    nav ul li{margin-left:25px;}
+    nav a{color:white; text-decoration:none; font-weight:500;}
+    nav h2{cursor:pointer;}
+
+    /* HERO */
+    .hero{height:100vh; background:linear-gradient(rgba(51,51,51,0.7),rgba(51,51,51,0.7)), url("Logo.jpeg"); background-size:cover; background-position:center center; background-attachment:fixed; display:flex; align-items:center; justify-content:center; text-align:center; color:white;}
+    .hero h1{font-size:55px; margin-bottom:20px;}
+    .hero p{max-width:650px; margin:auto; font-size:18px; line-height:1.6;}
+    .hero button{margin-top:30px; padding:15px 40px; border:none; border-radius:30px; background:#FFC107; color:#212121; font-size:16px; cursor:pointer; transition:0.3s;}
+    .hero button:hover{background:#FFB300;}
+
+    /* OBJECTIF */
+    #objectif{padding:100px 10%;}
+    .objectif{max-width:750px; margin:auto; font-size:18px; line-height:1.7; background:#333; border-radius:15px; padding:50px 30px; margin-bottom:50px; color:white;}
+    .objectif ul{margin:15px 0 0 20px;}
+    .objectif li{margin-bottom:10px;}
+
+    /* COTISATIONS */
+    #cotisation{background:linear-gradient(#333,#212121); padding:100px 10%; color:white; text-align:center; font-family:Poppins,sans-serif;}
+    .carte{max-width:520px; margin:auto; background:#2b2b2b; padding:40px; border-radius:18px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.4);}
+    .carte input{width:100%; padding:14px; margin:10px 0; border:none; border-radius:10px; font-size:15px;}
+    .btn{width:100%; padding:16px; margin-top:12px; border:none; border-radius:12px; font-size:17px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:12px; transition:.25s;}
+    .payer{background:#00B140; color:white;} /* Vert officiel Wave */
+    .payer:hover{background:#00912D; transform:scale(1.02);}
+    .logo{width:30px; height:30px;}
+    .small{margin-top:12px; font-size:13px; opacity:.8;}
+
+    /* FOOTER */
+    footer{background:#212121; color:white; padding:30px; text-align:center; margin-top:50px;}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      nav ul{flex-direction:column; background:rgba(51,51,51,0.95); position:absolute; top:60px; right:0; width:200px; display:none;}
+      nav ul.show{display:flex;}
+      nav ul li{margin:15px 0; text-align:center;}
+      .hero h1{font-size:40px;}
+      .hero p{font-size:16px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <h2 onclick="window.scrollTo({top:0,behavior:'smooth'})">Espoir de la Rue</h2>
+    <ul id="nav-ul">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#objectif">Objectif</a></li>
+      <li><a href="#cotisation">Cotisations</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div>
+      <h1>Espoir de la Rue</h1>
+      <p>Unis pour la différence. Ensemble, nous aidons les personnes vivant dans la rue et les talibés à retrouver dignité et espoir.</p>
+      <button onclick="document.getElementById('cotisation').scrollIntoView({behavior:'smooth'})">Participer</button>
+    </div>
+  </section>
+
+  <!-- OBJECTIF -->
+  <section id="objectif">
+    <h2>Notre Objectif</h2>
+    <div class="objectif">
+      <p>Chez <strong>Espoir de la Rue</strong>, notre mission est de transformer la solidarité en action concrète. Nous organisons :</p>
+      <ul>
+        <li>La distribution régulière de <strong>ndogou</strong> pour les personnes vivant dans la rue, afin de leur apporter nutrition et chaleur.</li>
+        <li>Des dons aux <strong>talibés</strong>, incluant des pulls, couvertures, chaussures et autres articles essentiels.</li>
+        <li>Des programmes de soutien social et éducatif pour aider à construire un avenir plus digne pour tous.</li>
+      </ul>
+      <p>Ensemble, nous apportons espoir et dignité aux plus vulnérables. Chaque geste compte et chaque contribution fait une réelle différence.</p>
+      <p style="font-weight: bold; margin-top: 10px;"><em>Votre solidarité permet à chacun de retrouver un peu de chaleur et de bonheur au quotidien.</em></p>
+    </div>
+  </section>
+
+  <!-- COTISATIONS -->
+  <section id="cotisation">
+    <div class="carte">
+      <h2>💛 Payer votre cotisation</h2>
+      <input type="text" id="nom" placeholder="Nom et prénom" required>
+      <input type="tel" id="tel" placeholder="Numéro de téléphone" required>
+      <input type="number" id="montant" placeholder="Montant (FCFA)" required>
+
+      <!-- BOUTON UNIQUE WAVE + WHATSAPP -->
+      <button class="btn payer" onclick="payerEtConfirmer()">
+        <img src="wave.png" class="logo" alt="Wave">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="logo" alt="WhatsApp">
+        Payer et confirmer
+      </button>
+
+      <p class="small">1) Payez avec Wave • 2) Le trésorier est informé automatiquement via WhatsApp</p>
+    </div>
+
+    <script>
+      function payerEtConfirmer(){
+        let nom = document.getElementById("nom").value;
+        let tel = document.getElementById("tel").value;
+        let montant = document.getElementById("montant").value;
+
+        if(!nom || !tel || !montant){
+          alert("Veuillez remplir tous les champs");
+          return;
+        }
+
+        // 1️⃣ Ouvrir le lien Wave
+        window.open("https://pay.wave.com/m/M_sn_QwEEmvW4v1a-/c/sn/", "_blank");
+
+        // 2️⃣ Préparer le message WhatsApp
+        let message =
+          "Bonjour 👋\n\n" +
+          "Je confirme avoir payé ma cotisation via Wave.\n\n" +
+          "👤 Nom : " + nom + "\n" +
+          "📞 Téléphone : " + tel + "\n" +
+          "💰 Montant : " + montant + " FCFA\n\n" +
+          "Merci.";
+
+        // 3️⃣ Ouvrir WhatsApp après un petit délai
+        setTimeout(function(){
+          window.open(
+            "https://wa.me/221773810773?text=" + encodeURIComponent(message),
+            "_blank"
+          );
+        }, 500);
+      }
+    </script>
+  </section>
+
+  <footer>
+    <p>© 2026 Espoir de la Rue - Unis pour la différence</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+  </script>
+
+</body>
+</html>
