@@ -58,6 +58,33 @@
 
 <body>
 
+    <!-- Ajouts/responsive pour mobile -->
+<style>
+/* Inputs et boutons responsive */
+.carte input, .btn {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hero texte responsive */
+@media(max-width:768px){
+  .hero h1 { font-size:32px; }
+  .hero p { font-size:16px; }
+  .carte { padding:30px; }
+}
+
+/* Navbar responsive */
+@media(max-width:768px){
+  nav ul { flex-direction:column; background:rgba(51,51,51,0.95); position:absolute; top:60px; right:0; width:200px; display:none; }
+  nav ul.show { display:flex; }
+  nav ul li { margin:15px 0; text-align:center; }
+}
+
+/* Ajuster la hauteur hero pour petits écrans */
+@media(max-height:600px){
+  .hero { height:80vh; }
+}
+</style>
   <!-- NAVBAR -->
   <nav id="navbar">
     <h2 onclick="window.scrollTo({top:0,behavior:'smooth'})">Espoir de la Rue</h2>
