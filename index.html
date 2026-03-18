@@ -347,6 +347,7 @@ Espoir de la Rue
 Confirmer au trésorier
 </button>
 
+
 <p class="small">1️⃣ Payez • 2️⃣ Confirmez</p>
 
 </div>
@@ -394,13 +395,31 @@ window.open("https://pay.wave.com/m/M_sn_QwEEmvW4v1a-/c/sn/","_blank");
 }
 
 /* WHATSAPP */
-function confirmerWA(){
-let nom=nom.value,tel=tel.value,montant=montant.value;
-if(!nom||!tel||!montant){alert("Veuillez remplir tous les champs");return;}
-let msg=`Bonjour 👋\nJe confirme avoir payé ma cotisation via Wave.\nNom: ${nom}\nTéléphone: ${tel}\nMontant: ${montant} FCFA`;
-window.open("https://wa.me/221773810773?text="+encodeURIComponent(msg));
-}
 
+function confirmerWA(){
+
+  let nom = document.getElementById("nom").value;
+  let tel = document.getElementById("tel").value;
+  let montant = document.getElementById("montant").value;
+
+  if(!nom || !tel || !montant){
+    alert("Veuillez remplir tous les champs");
+    return;
+  }
+
+  let message =
+"Bonjour 👋\n\n" +
+"Je confirme avoir payé ma cotisation via Wave.\n\n" +
+"👤 Nom : " + nom + "\n" +
+"📞 Téléphone : " + tel + "\n" +
+"💰 Montant : " + montant + " FCFA\n\n" +
+"Merci.";
+
+  window.open(
+    "https://wa.me/221773810773?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
 </script>
 
 </body>
