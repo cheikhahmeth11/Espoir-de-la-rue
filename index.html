@@ -254,6 +254,48 @@ nav {
     height: 35px;
   }
 }
+    /* BOUTON MENU */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 10px;
+  }
+}
   </style>
 </head>
 <body>
@@ -262,6 +304,7 @@ nav {
 <div class="nav-logo">
   <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/Logo.jpeg" alt="Espoir de la Rue" style="height:40px;">
 </div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
   <ul class="nav-links">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#presentation">Association</a></li>
@@ -443,6 +486,12 @@ nav {
   function changeImg(dir) { currentIdx = (currentIdx + dir + images.length) % images.length; document.getElementById('lb-img').src = images[currentIdx]; }
   document.getElementById('lightbox').addEventListener('click', e => { if (e.target === e.currentTarget) closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') changeImg(-1); if (e.key === 'ArrowRight') changeImg(1); });
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 </script>
 </body>
 </html>
