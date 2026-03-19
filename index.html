@@ -281,9 +281,63 @@ nav {
     padding: 20px 0;
     display: none;
   }
+/* MENU TOGGLE (3 barres) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* ANIMATION CROIX */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    /* animation */
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
 
   .nav-links.active {
-    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-links li {
@@ -293,7 +347,7 @@ nav {
 
   .nav-links li a {
     display: block;
-    padding: 10px;
+    padding: 12px;
   }
 }
   </style>
@@ -304,7 +358,11 @@ nav {
 <div class="nav-logo">
   <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/Logo.jpeg" alt="Espoir de la Rue" style="height:40px;">
 </div>
-  <div class="menu-toggle" id="menuToggle">☰</div>
+  <div class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
   <ul class="nav-links">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#presentation">Association</a></li>
@@ -488,9 +546,20 @@ nav {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') changeImg(-1); if (e.key === 'ArrowRight') changeImg(1); });
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
+const links = document.querySelectorAll(".nav-links a");
 
+// ouvrir / fermer menu
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+});
+
+// fermer quand on clique sur un lien
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.classList.remove("active");
+  });
 });
 </script>
 </body>
