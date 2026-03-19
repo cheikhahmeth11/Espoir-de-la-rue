@@ -172,13 +172,95 @@
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .cot-steps { flex-direction: column; }
     }
+
+    /* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+/* LOGO */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 45px;
+  width: auto;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+/* Hover logo */
+.nav-logo img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* MENU */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Hover lien */
+.nav-links li a:hover {
+  color: #ff9800;
+}
+
+/* BOUTON PARTICIPER */
+.nav-cta {
+  background: #ff9800;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white !important;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-cta:hover {
+  background: #ffc107;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-logo img {
+    height: 35px;
+  }
+}
   </style>
 </head>
 <body>
 
 <nav>
 <div class="nav-logo">
-  <img src="src="https:src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/Logo.jpeg" alt="Espoir de la Rue" style="height:40px;">
+  <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/Logo.jpeg" alt="Espoir de la Rue" style="height:40px;">
 </div>
   <ul class="nav-links">
     <li><a href="#accueil">Accueil</a></li>
@@ -193,11 +275,11 @@
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
   <div class="hero-content">
-    <div class="hero-tag">🌍 Association humanitaire · Thies, Sénégal</div>
+    <div class="hero-tag"> Association humanitaire · THIES, Sénégal</div>
     <h1 class="hero-title">Unis pour<br/><span>la différence</span></h1>
     <p class="hero-desc">Distribution de kits alimentaires, aide aux talibés et actions solidaires pour les personnes vulnérables depuis 2025.</p>
     <div class="hero-actions">
-      <a href="#cotisation" class="btn-primary">💛 Participer maintenant</a>
+      <a href="#cotisation" class="btn-primary">Participer maintenant</a>
       <a href="#presentation" class="btn-outline">Découvrir l'association →</a>
     </div>
   </div>
@@ -294,7 +376,7 @@
         <div class="cot-arrow">→</div>
         <div class="cot-step"><div class="step-circle">✓</div><span class="step-label">Vous êtes membre !</span></div>
       </div>
-      <a href="https://pay.wave.com/m/M_sn_e9HWEKsQTcy5/c/sn/" target="_blank" class="cot-btn">
+     <a href="https://pay.wave.com/m/M_sn_e9HWEKsQTcy5/c/sn/" target="_blank" class="cot-btn">
   <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/wave.png" alt="Wave"/>
   Payer avec Wave
 </a>
@@ -311,7 +393,7 @@
   <div class="footer-grid">
     <div>
       <div class="footer-logo">Espoir de la Rue</div>
-      <p class="footer-desc">Association humanitaire engagée pour les personnes vulnérables. Fondée en 2025 à Thies, Sénégal.</p>
+      <p class="footer-desc">Association humanitaire engagée pour les personnes vulnérables. Fondée en 2025 à Dakar, Sénégal.</p>
       <div class="footer-socials">
         <a href="https://www.instagram.com/amal_al_shari_?igsh=aXltcnhrOWh6eTVm&utm_source=qr" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"/></a>
         <a href="https://www.tiktok.com/@amal_al_shari" target="_blank"><img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/tiktok-icon2.png" alt="TikTok"/></a>
