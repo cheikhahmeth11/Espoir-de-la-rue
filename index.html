@@ -30,6 +30,8 @@
       background: rgba(26,18,6,0.92); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(245,200,66,0.15);
     }
+
+    
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
@@ -355,14 +357,18 @@ nav {
 <body>
 
 <nav>
-<div class="nav-logo">
-  <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/Logo.jpeg" alt="Espoir de la Rue" style="height:40px;">
-</div>
+  <div class="nav-logo">
+    <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/Logo.jpeg" alt="Espoir de la Rue">
+  </div>
+
+  <!-- bouton menu -->
   <div class="menu-toggle" id="menuToggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- menu -->
   <ul class="nav-links" id="navLinks">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#presentation">Association</a></li>
