@@ -191,17 +191,18 @@
   }
 }
 
-    /* NAVBAR */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #111;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-  z-index: 1000;
+@media(max-width:480px){
+  section {
+    padding: 60px 16px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
 }
 
 /* LOGO */
@@ -281,7 +282,7 @@ nav {
 }
 
 
-/* MENU TOGGLE (3 barres) */
+/* MENU TOGGLE */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -294,6 +295,58 @@ nav {
   height: 3px;
   background: white;
   transition: 0.3s;
+}
+
+/* ANIMATION CROIX */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 12px;
+  }
 }
 
 /* ANIMATION CROIX */
