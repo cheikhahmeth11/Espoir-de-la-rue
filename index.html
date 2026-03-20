@@ -421,7 +421,76 @@
   backdrop-filter: blur(6px);
 }
 
+/* FOOTER MOBILE FIX */
+@media(max-width:768px){
 
+  footer {
+    padding: 50px 20px 30px;
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-desc {
+    font-size: 0.9rem;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  /* CENTRER RESEAUX */
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-socials a {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* TITRES */
+  .footer-col h4 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  /* LIENS */
+  .footer-col ul {
+    align-items: center;
+  }
+
+  .footer-col ul li {
+    text-align: center;
+  }
+
+  .footer-col ul a {
+    font-size: 0.9rem;
+    padding: 5px 0;
+    display: inline-block;
+  }
+
+  /* BAS FOOTER */
+  .footer-bottom {
+    font-size: 0.75rem;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+}
+
+    .footer-socials a {
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-3px);
+}
   </style>
 </head>
 <body>
