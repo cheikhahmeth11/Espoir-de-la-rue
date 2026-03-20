@@ -356,6 +356,64 @@
     padding: 12px;
   }
 }
+
+/* RÉSEAUX FLOTTANTS */
+.social-float {
+  position: fixed;
+  right: 18px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 9999;
+}
+
+.social {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.social img {
+  width: 26px;
+  height: 26px;
+}
+
+/* COULEURS */
+.social.whatsapp {
+  background: #25D366;
+}
+
+.social.instagram {
+  background: #E1306C;
+}
+
+.social.tiktok {
+  background: #000;
+}
+
+/* HOVER */
+.social:hover {
+  transform: scale(1.12) translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .social {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social img {
+    width: 24px;
+  }
+}
   </style>
 </head>
 <body>
@@ -533,7 +591,19 @@
   </div>
   <div class="footer-bottom">© 2026 Espoir de la Rue — Unis pour la différence 💛</div>
 </footer>
+<div class="social-float">
+  <a href="https://wa.me/221773810773" target="_blank" class="social whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+  </a>
 
+  <a href="https://www.instagram.com/amal_al_shari_" target="_blank" class="social instagram">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+  </a>
+
+  <a href="https://www.tiktok.com/@amal_al_shari" target="_blank" class="social tiktok">
+    <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/tiktok-icon2.png">
+  </a>
+</div>
 <script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
