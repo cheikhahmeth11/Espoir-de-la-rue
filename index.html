@@ -491,6 +491,46 @@
 .footer-socials a:hover {
   transform: translateY(-3px);
 }
+
+    .cot-confirm-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.cot-confirm-form h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.cot-confirm-form input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.cot-confirm-form button {
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cot-confirm-form button:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+}
   </style>
 </head>
 <body>
@@ -626,18 +666,14 @@
   <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/wave.png" alt="Wave"/>
   Payer avec Wave
 </a>
-      <div class="cot-confirm">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
-        Puis confirmez au trésorier via
-        <a href="https://wa.me/221773810773?text=Bonjour%20Espoir%20de%20la%20Rue%20%F0%9F%92%9B%2C%20je%20viens%20de%20faire%20le%20paiement%20de%20ma%20cotisation%20via%20Wave.%20Pouvez-vous%20confirmer%20la%20r%C3%A9ception%20s%27il%20vous%20pla%C3%AEt%20%3F" target="_blank">
-  <div class="cot-confirm">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
-  <a href="https://wa.me/221773810773?text=Bonjour%20%F0%9F%92%9B%2C%20j%27ai%20effectu%C3%A9%20le%20paiement%20de%20ma%20cotisation%20via%20Wave.%20Merci%20de%20confirmer%20la%20r%C3%A9ception." target="_blank">
-    J’ai payé — confirmer sur WhatsApp
-  </a>
+   <div class="cot-confirm-form">
+  <h3>Confirmer votre paiement</h3>
+
+  <input type="text" id="nom" placeholder="Votre nom complet" required>
+  <input type="tel" id="numero" placeholder="Votre numéro de téléphone" required>
+
+  <button onclick="envoyerWhatsApp()">Confirmer sur WhatsApp</button>
 </div>
-</a>
-      </div>
     </div>
   </div>
 </section>
