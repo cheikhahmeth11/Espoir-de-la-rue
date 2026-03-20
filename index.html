@@ -212,10 +212,13 @@
 }
 
 .nav-logo img {
-  height: 45px;
-  width: auto;
-  border-radius: 8px;
-  transition: 0.3s ease;
+  height: 60px; /* avant 40px */
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.08);
 }
 
 /* Hover logo */
@@ -414,6 +417,11 @@
     width: 24px;
   }
 }
+.social {
+  backdrop-filter: blur(6px);
+}
+
+
   </style>
 </head>
 <body>
@@ -641,6 +649,7 @@ links.forEach(link => {
     menuToggle.classList.remove("active");
   });
 });
+
 </script>
 </body>
 </html>
