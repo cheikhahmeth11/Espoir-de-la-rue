@@ -220,151 +220,9 @@
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* MOBILE */
-   @media(max-width:768px){
 
-  .menu-toggle {
-    display: flex;
-  }
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: linear-gradient(135deg, #020617, #052e16);
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
 
-    /* animation */
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-@media(max-width:480px){
-  section {
-    padding: 60px 16px;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  .hero-desc {
-    font-size: 1rem;
-  }
-}
-
-/* LOGO */
-.nav-logo {
-  display: flex;
-  align-items: center;
-}
-
-.nav-logo img {
-  height: 60px; /* avant 40px */
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.nav-logo img:hover {
-  transform: scale(1.08);
-}
-
-/* Hover logo */
-.nav-logo img:hover {
-  transform: scale(1.08);
-  filter: brightness(1.1);
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav {
-    padding: 15px 20px;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .nav-logo img {
-    height: 35px;
-  }
-}
-
-/* MENU TOGGLE */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 28px;
-  height: 3px;
-  background: white;
-  transition: 0.3s;
-}
-
-/* ANIMATION CROIX */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: linear-gradient(135deg, #020617, #052e16);
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: all 0.4s ease;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links li a {
-    display: block;
-    padding: 12px;
-  }
-}
 
 /* ANIMATION CROIX */
 .menu-toggle.active span:nth-child(1) {
@@ -379,47 +237,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* MOBILE NAV */
-@media(max-width:768px){
 
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: linear-gradient(135deg, #020617, #052e16);
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-
-    /* animation */
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links li a {
-    display: block;
-    padding: 12px;
-  }
-}
 
 /* RÉSEAUX FLOTTANTS */
 .social-float {
@@ -552,30 +370,232 @@
 .footer-socials a:hover {
   transform: translateY(-3px);
 }
+.cot-confirm input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+/* NAV CONTAINER */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* LOGO */
+.nav-logo img {
+  height: 55px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+/* LIENS */
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD700, #16A34A);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #FFD700;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* CTA */
+.nav-cta {
+  background: linear-gradient(135deg, #16A34A, #FFD700);
+  color: #022c22 !important;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-weight: 700 !important;
+}
+
+/* MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* ================= MOBILE NAV CLEAN ================= */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 12px 18px;
+  }
+
+  /* LOGO */
+  .nav-logo img {
+    height: 42px;
+  }
+
+  /* MENU BURGER */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .menu-toggle span {
+    width: 26px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* ANIMATION CROIX */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* MENU */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(135deg, #020617, #052e16);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* LIENS */
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+    padding: 12px;
+    display: block;
+  }
+
+  /* BOUTON CTA */
+  .nav-cta {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}
+.nav-links a {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.nav-links.active a {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.4s;
+}
+
+.nav-links.active a:nth-child(1){transition-delay:0.1s;}
+.nav-links.active a:nth-child(2){transition-delay:0.2s;}
+.nav-links.active a:nth-child(3){transition-delay:0.3s;}
+.nav-links.active a:nth-child(4){transition-delay:0.4s;}
+.nav-links.active a:nth-child(5){transition-delay:0.5s;}
+
   </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">
-    <img src="LOGO.png" alt="Espoir de la Rue">
-  </div>
+  <div class="nav-container">
 
-  <!-- bouton menu -->
-  <div class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <div class="nav-logo">
+      <img src="Logo.jpeg" alt="Logo Espoir de la Rue">
+    </div>
 
-  <!-- menu -->
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#accueil">Accueil</a></li>
-    <li><a href="#presentation">Association</a></li>
-    <li><a href="#galerie">Galerie</a></li>
-    <li><a href="#objectif">Objectifs</a></li>
-    <li><a href="#cotisation" class="nav-cta">Participer 💛</a></li>
-  </ul>
+    <!-- bouton menu mobile -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- menu -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#presentation">Association</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#objectif">Objectifs</a></li>
+      <li><a href="#cotisation" class="nav-cta">Participer 💛</a></li>
+    </ul>
+
+  </div>
 </nav>
 
 <section id="accueil">
@@ -687,17 +707,17 @@
   <img src="https://cheikhahmeth11.github.io/Espoir-de-la-rue/wave.png" alt="Wave"/>
   Payer avec Wave
 </a>
-      <div class="cot-confirm">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
-        Puis confirmez au trésorier via
-        <a href="https://wa.me/221773810773?text=Bonjour%20Espoir%20de%20la%20Rue%20%F0%9F%92%9B%2C%20je%20viens%20de%20faire%20le%20paiement%20de%20ma%20cotisation%20via%20Wave.%20Pouvez-vous%20confirmer%20la%20r%C3%A9ception%20s%27il%20vous%20pla%C3%AEt%20%3F" target="_blank">
-  <div class="cot-confirm">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
-  <a href="https://wa.me/221773810773?text=Bonjour%20%F0%9F%92%9B%2C%20j%27ai%20effectu%C3%A9%20le%20paiement%20de%20ma%20cotisation%20via%20Wave.%20Merci%20de%20confirmer%20la%20r%C3%A9ception." target="_blank">
-    J’ai payé — confirmer sur WhatsApp
-  </a>
+     <div class="cot-confirm" style="flex-direction: column; gap: 12px;">
+
+  <input type="text" id="nom" placeholder="Votre nom" required>
+  <input type="tel" id="numero" placeholder="Votre numéro" required>
+  <input type="number" id="montant" placeholder="Montant envoyé (FCFA)" required>
+
+  <button onclick="envoyerWhatsApp()" class="cot-btn">
+    Confirmer sur WhatsApp
+  </button>
+
 </div>
-</a>
       </div>
     </div>
   </div>
@@ -786,7 +806,31 @@ links.forEach(link => {
     menuToggle.classList.remove("active");
   });
 });
+function envoyerWhatsApp() {
+  const nom = document.getElementById("nom").value.trim();
+  const numero = document.getElementById("numero").value.trim();
+  const montant = document.getElementById("montant").value.trim();
+
+  if (!nom || !numero || !montant) {
+    alert("Veuillez remplir tous les champs");
+    return;
+  }
+
+  const message = `Bonjour 💛,%0A
+Je viens de faire ma cotisation via Wave.%0A
+%0A
+👤 Nom : ${nom}%0A
+📞 Numéro : ${numero}%0A
+💰 Montant : ${montant} FCFA%0A
+%0A
+Merci de confirmer la réception.`;
+
+  const url = `https://wa.me/221773810773?text=${message}`;
+
+  window.open(url, "_blank");
+}
 
 </script>
+
 </body>
 </html>
